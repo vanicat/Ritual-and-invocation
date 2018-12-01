@@ -36,7 +36,7 @@ var animalsDef
 function buyAnnimal (species) {
   if (money >= animalsDef[species].cost) {
     money -= animalsDef[species].cost
-    var animal = new animals(species)
+    var animal = new Animal(species)
     animal.addingAnimalToHtml()
   }
 }

@@ -1,7 +1,7 @@
 /* global stuffBlock, uuidv4, animalsDef */
 var stuffList = {}
 
-class animals {
+class Animal {
   constructor (species) {
     var nbNames = animalsDef[species].names.length
     var n = Math.floor(Math.random() * nbNames)
