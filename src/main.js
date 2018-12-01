@@ -2,7 +2,7 @@ var membersBlock
 var stuffBlock
 var enemiesBlock
 var visibleBlock
-var actionBlock
+var dashboardBlock
 
 var money = 0
 var health = 5
@@ -14,7 +14,7 @@ function updateDisplay () {
   document.getElementById('money').innerHTML = '$ ' + money
 
   document.getElementById('health').innerHTML = goodHealth.repeat(health) + badHealth.repeat(5 - health)
-  document.getElementById('action').innerHTML = actions
+  document.getElementById('actions').innerHTML = actions
 }
 
 function addActions () {
@@ -22,16 +22,20 @@ function addActions () {
   updateDisplay()
 }
 
+function working () {
+  
+}
+
 var main = function () {
-  actionBlock = document.getElementById('action')
+  dashboardBlock = document.getElementById('dashboard')
   membersBlock = document.getElementById('members')
   stuffBlock = document.getElementById('stuff')
   enemiesBlock = document.getElementById('enemies')
 
   visibleBlock = membersBlock
-  showBlockCreate(actionBlock)()
+  showBlockCreate(dashboardBlock)()
 
-  document.getElementById('actionSelector').onclick = showBlockCreate(actionBlock)
+  document.getElementById('dashboardSelector').onclick = showBlockCreate(dashboardBlock)
   document.getElementById('membersSelector').onclick = showBlockCreate(membersBlock)
   document.getElementById('stuffSelector').onclick = showBlockCreate(stuffBlock)
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)

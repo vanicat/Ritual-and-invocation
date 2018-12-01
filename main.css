@@ -40,7 +40,6 @@ section#main {
 }
 
 section.section {
-    min-height: 50vmax;
     visibility: hidden;
     position: absolute;
 }
