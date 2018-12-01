@@ -1,0 +1,46 @@
+html {
+    background-color: black;
+    color: beige;
+}
+a {
+    color: aliceblue;
+}
+
+header {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    text-align: center;
+    background-color: black;
+    color: aquamarine;
+    min-width: 100%;
+}
+
+nav {
+    position: fixed;
+}
+
+nav ul {
+    position: relative;
+    left: -2em;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li:hover {
+    background-color: darkblue;
+    cursor: pointer;
+}
+
+section#main {
+    margin-left: 7em;
+    margin-top: 10ex;
+}
+
+section.section {
+    min-height: 50vmax;
+    visibility: hidden;
+    position: absolute;
+}

@@ -3,28 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sacrifice</title>
+    <title>My sect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-
-    <script src="//cdn.jsdelivr.net/npm/phaser-ce@2.11.0"></script>
 
     <script src="src/boot.js"></script>
     <script src="src/main.js"></script>
 
-    <script>
-    var main = function () {
-      var game = new Phaser.Game(window.innerWidth*.95, window.innerHeight*.95, Phaser.AUTO, 'main', null)
-      game.state.add('Boot', boot)
-      game.state.add('Preload', preload)
-      game.state.add('TheGame', theGame)
-      //game.state.add('Gameover', gameover)
-      game.state.start('Boot')
-    }
-    </script>
 </head>
 <body onload="main()">
-    <div id="main">
-    </div>
+    <header>
+        <h1>My secte</h1>
+    </header>
+    <nav>
+        <ul>
+            <li id="actionSelector">Dashboard</li>
+            <li id="membersSelector">members</li>
+            <li id="stuffSelector">artifact</li>
+            <li id="enemiesSelector">Adversary</li>
+        </ul>
+    </nav>
+    <section id="main">
+        <section id="action">
+            <h2>Dashboard</h2>
+            <div></div>
+        </section>
+        <section id="members" class="section">
+          <h2>Our dearest members</h2>
+        </section>
+        <section id="action" class="section">
+    
+        </section>
+        <section id="stuff" class="section">
+            tutu
+        </section>
+        <section id="enemies" class="section">
+            tata
+        </section>
+    </section>
+    <footer></footer>
 </body>
 </html>
