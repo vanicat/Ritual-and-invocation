@@ -1,4 +1,4 @@
-/* global fetch */
+/* global fetch, animals */
 
 var membersBlock
 var stuffBlock
@@ -31,24 +31,13 @@ function working () {
   }
 }
 
-function addingAnimal (name, species, img) {
-  var animal = document.getElementById('animal').cloneNode(true)
-  animal.getElementsByTagName('img')[0].src = img
-  animal.getElementsByClassName('name')[0].innerHTML = name
-  animal.getElementsByClassName('species')[0].innerHTML = species
-
-  stuffBlock.appendChild(animal)
-}
-
 var animalsDef
 
 function buyAnnimal (species) {
   if (money >= animalsDef[species].cost) {
     money -= animalsDef[species].cost
-    var nbNames = animalsDef[species].names.length
-    var n = Math.floor(Math.random() * nbNames)
-    var name = animalsDef[species].names[n]
-    addingAnimal(name, species, animalsDef[species].img)
+    var animal = new animals(species)
+    animal.addingAnimalToHtml()
   }
 }
 
