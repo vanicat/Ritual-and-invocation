@@ -1,3 +1,5 @@
+/* global fetch */
+
 var membersBlock
 var stuffBlock
 var enemiesBlock
@@ -38,7 +40,13 @@ function addingAnimal (name, species, img) {
   stuffBlock.appendChild(animal)
 }
 
-var main = function () {
+var animalsDef
+
+function loadAnimals (json) {
+  animalsDef = json
+}
+
+function main () {
   dashboardBlock = document.getElementById('dashboard')
   membersBlock = document.getElementById('members')
   stuffBlock = document.getElementById('stuff')
@@ -56,6 +64,10 @@ var main = function () {
   document.getElementById('buyKitten').onclick = function () {
     addingAnimal('a kitten', 'cat', 'assets/kitten.png')
   }
+
+  fetch('assets/animals.json')
+    .then(res => res.json())
+    .then(json => loadAnimals(json))
 
   updateDisplay()
   setInterval(addActions, 1000)
