@@ -2,7 +2,7 @@
 
 var membersBlock
 var stuffBlock
-var enemiesBlock
+var ritualBlock
 var visibleBlock
 var dashboardBlock
 
@@ -49,7 +49,7 @@ function main () {
   dashboardBlock = document.getElementById('dashboard')
   membersBlock = document.getElementById('members')
   stuffBlock = document.getElementById('stuff')
-  enemiesBlock = document.getElementById('enemies')
+  ritualBlock = document.getElementById('ritual')
 
   visibleBlock = membersBlock
   showBlockCreate(dashboardBlock)()
@@ -60,8 +60,8 @@ function main () {
     showBlockCreate(membersBlock)
   document.getElementById('stuffSelector').onclick =
     showBlockCreate(stuffBlock)
-  document.getElementById('enemiesSelector').onclick =
-    showBlockCreate(enemiesBlock)
+  document.getElementById('ritualSelector').onclick =
+    showBlockCreate(ritualBlock)
 
   document.getElementById('working').onclick = working
   document.getElementById('buyKitten').onclick =
