@@ -1,7 +1,10 @@
-/* global stuffBlock, uuidv4, animalsDef */
+/* global animalsDef */
+import stuffBlock from './main.js'
+import uuidv4 from '../lib/misc.js'
+
 var stuffList = {}
 
-class Animal {
+export class Animal {
   constructor (species) {
     var nbNames = animalsDef[species].names.length
     var n = Math.floor(Math.random() * nbNames)

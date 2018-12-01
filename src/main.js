@@ -1,7 +1,8 @@
-/* global fetch, animals */
+/* global fetch */
+import { Animal } from './things.js'
 
 var membersBlock
-var stuffBlock
+export var stuffBlock
 var ritualBlock
 var visibleBlock
 var dashboardBlock
@@ -45,7 +46,7 @@ function loadAnimals (json) {
   animalsDef = json
 }
 
-function main () {
+export default function main () {
   dashboardBlock = document.getElementById('dashboard')
   membersBlock = document.getElementById('members')
   stuffBlock = document.getElementById('stuff')
@@ -84,3 +85,5 @@ var showBlockCreate = function (block) {
     visibleBlock = block
   }
 }
+
+document.getElementsByTagName('body')[0].onload = main
