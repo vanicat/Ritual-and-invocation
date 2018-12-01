@@ -58,4 +58,3 @@ var showBlockCreate = function (block) {
     visibleBlock = block
   }
 }
-/* Export: main */
