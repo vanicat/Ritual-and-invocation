@@ -32,18 +32,12 @@ function working () {
   }
 }
 
-var animalsDef
-
 function buyAnnimal (species) {
-  if (money >= animalsDef[species].cost) {
-    money -= animalsDef[species].cost
+  if (money >= Animal.def[species].cost) {
+    money -= Animal.def[species].cost
     var animal = new Animal(species)
     animal.addingAnimalToHtml()
   }
-}
-
-function loadAnimals (json) {
-  animalsDef = json
 }
 
 export default function main () {
@@ -70,7 +64,7 @@ export default function main () {
 
   fetch('assets/animals.json')
     .then(res => res.json())
-    .then(json => loadAnimals(json))
+    .then(json => Animal.loadDef(json))
 
   updateDisplay()
   setInterval(addActions, 1000)

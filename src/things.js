@@ -1,19 +1,18 @@
-/* global animalsDef */
-import stuffBlock from './main.js'
-import uuidv4 from '../lib/misc.js'
+/* global */
+import { stuffBlock } from './main.js'
+import { uuidv4 } from '../lib/misc.js'
 
 var stuffList = {}
-
 export class Animal {
   constructor (species) {
-    var nbNames = animalsDef[species].names.length
+    var nbNames = Animal.def[species].names.length
     var n = Math.floor(Math.random() * nbNames)
-    var name = animalsDef[species].names[n]
+    var name = Animal.def[species].names[n]
 
     this.name = name
     this.species = species
     this.htmlId = uuidv4()
-    this.img = animalsDef[species].img
+    this.img = Animal.def[species].img
     stuffList[this.htmlId] = this
   }
 
@@ -32,4 +31,8 @@ export class Animal {
 
     stuffBlock.appendChild(animal)
   }
+}
+
+Animal.loadDef = function (json) {
+  Animal.def = json
 }
