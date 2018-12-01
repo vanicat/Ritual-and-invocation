@@ -10,6 +10,18 @@ var goodHealth = '♥'
 var badHealth = '♡'
 var actions = 0
 
+function updateDisplay () {
+  document.getElementById('money').innerHTML = '$ ' + money
+
+  document.getElementById('health').innerHTML = goodHealth.repeat(health) + badHealth.repeat(5 - health)
+  document.getElementById('action').innerHTML = actions
+}
+
+function addActions () {
+  actions += 1
+  updateDisplay()
+}
+
 var main = function () {
   actionBlock = document.getElementById('action')
   membersBlock = document.getElementById('members')
@@ -23,6 +35,8 @@ var main = function () {
   document.getElementById('membersSelector').onclick = showBlockCreate(membersBlock)
   document.getElementById('stuffSelector').onclick = showBlockCreate(stuffBlock)
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
+
+  updateDisplay()
 }
 
 var showBlockCreate = function (block) {
