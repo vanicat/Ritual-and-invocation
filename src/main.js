@@ -64,13 +64,18 @@ function main () {
   visibleBlock = membersBlock
   showBlockCreate(dashboardBlock)()
 
-  document.getElementById('dashboardSelector').onclick = showBlockCreate(dashboardBlock)
-  document.getElementById('membersSelector').onclick = showBlockCreate(membersBlock)
-  document.getElementById('stuffSelector').onclick = showBlockCreate(stuffBlock)
-  document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
+  document.getElementById('dashboardSelector').onclick =
+    showBlockCreate(dashboardBlock)
+  document.getElementById('membersSelector').onclick =
+    showBlockCreate(membersBlock)
+  document.getElementById('stuffSelector').onclick =
+    showBlockCreate(stuffBlock)
+  document.getElementById('enemiesSelector').onclick =
+    showBlockCreate(enemiesBlock)
 
   document.getElementById('working').onclick = working
-  document.getElementById('buyKitten').onclick = function () {buyAnnimal('cat')}
+  document.getElementById('buyKitten').onclick =
+    function () { buyAnnimal('cat') }
 
   fetch('assets/animals.json')
     .then(res => res.json())
