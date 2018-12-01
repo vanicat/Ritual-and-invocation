@@ -29,6 +29,15 @@ function working () {
   }
 }
 
+function addingAnimal (name, species, img) {
+  var animal = document.getElementById('animal').cloneNode(true)
+  animal.getElementsByTagName('img')[0].src = img
+  animal.getElementsByClassName('name')[0].innerHTML = name
+  animal.getElementsByClassName('species')[0].innerHTML = species
+
+  stuffBlock.appendChild(animal)
+}
+
 var main = function () {
   dashboardBlock = document.getElementById('dashboard')
   membersBlock = document.getElementById('members')
@@ -44,6 +53,9 @@ var main = function () {
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
 
   document.getElementById('working').onclick = working
+  document.getElementById('buyKitten').onclick = function () {
+    addingAnimal('a kitten', 'cat', 'assets/kitten.png')
+  }
 
   updateDisplay()
   setInterval(addActions, 1000)

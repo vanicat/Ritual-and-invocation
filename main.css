@@ -56,3 +56,15 @@ section#situation {
     right: 2ex;
     top: 2ex;
 }
+
+.animals {
+    border-style: solid;
+    border-width: 1px;
+    min-height: 3cm;
+    width: fit-content;
+}
+
+.animals img {
+    width: 3cm;
+    float: left;
+}
