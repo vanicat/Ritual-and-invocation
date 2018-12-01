@@ -4,6 +4,12 @@ var enemiesBlock
 var visibleBlock
 var actionBlock
 
+var money = 0
+var health = 5
+var goodHealth = '♥'
+var badHealth = '♡'
+var actions = 0
+
 var main = function () {
   actionBlock = document.getElementById('action')
   membersBlock = document.getElementById('members')
