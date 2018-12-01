@@ -1,5 +1,5 @@
 /* global fetch */
-import { Animal } from './things.js'
+import { Animal, Ritual } from './things.js'
 
 var membersBlock
 export var stuffBlock
@@ -36,7 +36,7 @@ function buyAnnimal (species) {
   if (money >= Animal.def[species].cost) {
     money -= Animal.def[species].cost
     var animal = new Animal(species)
-    animal.addingAnimalToHtml()
+    animal.addingToHtml()
   }
 }
 
@@ -62,12 +62,8 @@ export default function main () {
   document.getElementById('buyKitten').onclick =
     function () { buyAnnimal('cat') }
 
-  fetch('assets/animals.json')
-    .then(res => res.json())
-    .then(json => Animal.loadDef(json))
-
   updateDisplay()
-  setInterval(addActions, 1000)
+  setInterval(addActions, 100)
 }
 
 var showBlockCreate = function (block) {
@@ -80,4 +76,16 @@ var showBlockCreate = function (block) {
   }
 }
 
+fetch('assets/animals.json')
+  .then(res => res.json())
+  .then(json => Animal.loadDef(json))
+
+fetch('assets/rituals.json')
+  .then(res => res.json())
+  .then(function (json) {
+    Ritual.def = json
+    var r = new Ritual('simple')
+    r.addingToHtml()
+  }
+  )
 document.getElementsByTagName('body')[0].onload = main

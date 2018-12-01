@@ -1,0 +1,12 @@
+{
+    "simple": {
+        "name": "A simple ritual",
+        "desc": "It should not cost a lot, but don't expect gran effect",
+        "actions": {
+            "knowledge": "Ask for forbiden knowledge",
+            "job": "Ask for a better job",
+            "friend": "Ask for contact with possible aquaintance"
+        }
+    }
+}
+
