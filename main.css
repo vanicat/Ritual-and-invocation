@@ -43,7 +43,7 @@ nav li, #situation li {
 
 section#main {
     margin-left: 7em;
-    margin-top: 10ex;
+    margin-top: 15ex;
 }
 
 section.section {
@@ -57,11 +57,16 @@ section#situation {
     top: 2ex;
 }
 
+section#stuff {
+    display: inline-block;
+}
+
 .animals {
     border-style: solid;
     border-width: 1px;
     min-height: 3cm;
     width: fit-content;
+    display: inline-block;
 }
 
 .animals img {
