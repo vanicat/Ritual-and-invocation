@@ -37,6 +37,7 @@ var main = function () {
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
 
   updateDisplay()
+  setInterval(addActions, 1000)
 }
 
 var showBlockCreate = function (block) {
