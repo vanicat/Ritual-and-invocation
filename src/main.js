@@ -46,7 +46,8 @@ function buyAnnimal (species) {
   if (money >= animalsDef[species].cost) {
     money -= animalsDef[species].cost
     var nbNames = animalsDef[species].names.length
-    var name = animalsDef[species].names[Math.random() * nbNames]
+    var n = Math.floor(Math.random() * nbNames)
+    var name = animalsDef[species].names[n]
     addingAnimal(name, species, animalsDef[species].img)
   }
 }
