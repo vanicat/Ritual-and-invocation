@@ -29,9 +29,16 @@ nav li, #situation li {
     list-style: none;
 }
 
-nav li:hover {
+.clickable:hover {
     background-color: darkblue;
     cursor: pointer;
+}
+
+.clickable {
+    background-color: #212447;
+    border-color: azure;
+    border-width: 1px;
+    border-style: inset;
 }
 
 section#main {
