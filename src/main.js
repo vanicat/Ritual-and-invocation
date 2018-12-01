@@ -42,6 +42,15 @@ function addingAnimal (name, species, img) {
 
 var animalsDef
 
+function buyAnnimal (species) {
+  if (money >= animalsDef[species].cost) {
+    money -= animalsDef[species].cost
+    var nbNames = animalsDef[species].names.length
+    var name = animalsDef[species].names[Math.random() * nbNames]
+    addingAnimal(name, species, animalsDef[species].img)
+  }
+}
+
 function loadAnimals (json) {
   animalsDef = json
 }
@@ -61,9 +70,7 @@ function main () {
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
 
   document.getElementById('working').onclick = working
-  document.getElementById('buyKitten').onclick = function () {
-    addingAnimal('a kitten', 'cat', 'assets/kitten.png')
-  }
+  document.getElementById('buyKitten').onclick = function () {buyAnnimal('cat')}
 
   fetch('assets/animals.json')
     .then(res => res.json())
