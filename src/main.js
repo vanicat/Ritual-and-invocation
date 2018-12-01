@@ -23,7 +23,10 @@ function addActions () {
 }
 
 function working () {
-  
+  if (actions >= 10) {
+    actions -= 10
+    money += 5
+  }
 }
 
 var main = function () {
@@ -39,6 +42,8 @@ var main = function () {
   document.getElementById('membersSelector').onclick = showBlockCreate(membersBlock)
   document.getElementById('stuffSelector').onclick = showBlockCreate(stuffBlock)
   document.getElementById('enemiesSelector').onclick = showBlockCreate(enemiesBlock)
+
+  document.getElementById('working').onclick = working
 
   updateDisplay()
   setInterval(addActions, 1000)
