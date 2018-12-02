@@ -113,7 +113,7 @@ function knowledge (level, elem) {
     } else if (i < available.length * 2) {
       addText(elem, 'You didn\'t understood what was uttered to you.')
     } else {
-      let demon = new Demon()
+      let demon = new Demon(level)
       demon.addingToHtml()
       addText(elem, 'Small error can lead to dangerous consequence:')
       addBr(elem)

@@ -43,4 +43,18 @@ export function updateWorld () {
   if (world.health <= 0) {
     window.location = 'dead.html'
   }
+
+  let hasDemon = false
+
+  for (let i in world.stuff) {
+    if (world.stuff[i].isWaiting) {
+      hasDemon = true
+      world.stuff[i].ping()
+    }
+  }
+  if (hasDemon) {
+    document.getElementById('demons').hidden = false
+  } else {
+    document.getElementById('demons').hidden = true
+  }
 }

@@ -85,6 +85,9 @@ export class Demon {
     this.name = name
     this.level = level
     this.htmlId = uuidv4()
+    this.status = 0
+
+    this.isWaiting = true
 
     world.stuff[this.htmlId] = this
   }
@@ -110,5 +113,16 @@ export class Demon {
     }
 
     document.getElementById('demons').appendChild(demon)
+  }
+
+  ping () {
+    this.status += this.level
+
+    if (this.status >= 400) {
+      this.status -= 400
+      world.health -= 1
+    }
+
+    document.getElementById(this.htmlId).getElementsByTagName('meter')[0].value = this.status
   }
 }
