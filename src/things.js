@@ -37,14 +37,16 @@ function updateSelected () {
 
 export class Animal {
   constructor (species) {
-    var nbNames = Animal.def[species].names.length
-    var n = Math.floor(Math.random() * nbNames)
-    var name = Animal.def[species].names[n]
+    Object.assign(this, Animal.def[species])
+    let nbNames = this.names.length
+    let n = Math.floor(Math.random() * nbNames)
+    let name = this.names[n]
+
+    delete this.names
 
     this.name = name
     this.species = species
     this.htmlId = uuidv4()
-    this.img = Animal.def[species].img
     world.stuff[this.htmlId] = this
   }
 

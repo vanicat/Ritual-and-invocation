@@ -2,12 +2,8 @@ import { uuidv4 } from '../lib/misc.js'
 
 export class Ritual {
   constructor (name) {
-    var ritualdesc = Ritual.def[name]
-    this.name = ritualdesc['name']
-    this.desc = ritualdesc['desc']
-    this.actions = ritualdesc['actions']
-    this.cost = ritualdesc['cost']
-    this.minCost = ritualdesc['minCost']
+    let ritualdesc = Ritual.def[name]
+    Object.assign(this, ritualdesc)
     this.htmlId = uuidv4()
   }
 
