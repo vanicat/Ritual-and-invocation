@@ -25,8 +25,7 @@ export function updateSelected () {
 
   for (i in world.selected) {
     stuff = world.selected[i]
-    elem = document.getElementById(stuff.htmlId)
-    elem = elem.cloneNode(true)
+    elem = document.getElementById(stuff.htmlId).cloneNode(true)
     elem.id = elem.id + 'clone'
     elem.onclick = function () {
       toggleSelectStuff(stuff.htmlId)

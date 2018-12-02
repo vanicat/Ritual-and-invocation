@@ -37,6 +37,7 @@ export class Ritual {
     let sacrifice = 0
 
     let elem = document.getElementById('ritual-result').cloneNode(true)
+    elem.id = null
     document.getElementById('ritual-result-list').appendChild(elem)
 
     elem.onclick = function () {
