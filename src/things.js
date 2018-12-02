@@ -18,7 +18,7 @@ function toggleSelectStuff (htmlId) {
   updateSelected()
 }
 
-function updateSelected () {
+export function updateSelected () {
   var i, stuff, elem
   var div = document.getElementById('selected-stuff')
   div.innerHTML = ''
@@ -51,7 +51,7 @@ export class Animal {
   }
 
   remove () {
-    var element = document.getElementById('htmlId')
+    var element = document.getElementById(this.htmlId)
     element.parentNode.removeChild(element)
     delete world.stuff[this.htmlId]
   }

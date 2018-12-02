@@ -27,7 +27,7 @@ function addActions () {
 function working () {
   if (world.actions >= 10) {
     world.actions -= 10
-    world.money += 5
+    world.money += world.jobQuality
   }
 }
 

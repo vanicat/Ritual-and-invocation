@@ -1,4 +1,6 @@
 import { uuidv4 } from '../lib/misc.js'
+import { world } from './world.js'
+import { updateSelected } from './things.js'
 
 export class Ritual {
   constructor (name) {
@@ -14,11 +16,12 @@ export class Ritual {
     ritual.getElementsByClassName('desc')[0].innerHTML = this.desc
 
     var goals = ritual.getElementsByClassName('goals')[0]
-    for (var action in this.actions) {
-      var elem = document.createElement('a')
+    for (let action in this.actions) {
+      let elem = document.createElement('a')
       elem.innerHTML = this.actions[action]
+      let me = this
       elem.onclick = function () {
-        console.log(action)
+        me.perform(action)
       }
       goals.appendChild(elem)
 
@@ -28,14 +31,38 @@ export class Ritual {
 
     document.getElementById('ritual').appendChild(ritual)
   }
+
+  perform (action) {
+    let ritual = ritualsList[action]
+    let sacrifice = 0
+
+    for (let stuff in world.selected) {
+      const lamb = world.selected[stuff]
+      if (lamb.value >= this.minCost) {
+        sacrifice += world.selected[stuff].value
+      }
+      lamb.remove()
+    }
+
+    world.selected = []
+    updateSelected()
+
+    if (sacrifice >= this.cost) {
+      ritual.doIt()
+    }
+  }
 }
 
 var job = {
   'desc': 'Ask for a better job',
-  doIt: function (world) {
-    if (world.job < 10) {
-      world.job += 1
+  doIt: function () {
+    if (world.jobQuality < 10) {
+      world.jobQuality += 1
     }
   }
 
+}
+
+var ritualsList = {
+  'job': job
 }
