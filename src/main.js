@@ -64,7 +64,7 @@ export default function main () {
   document.getElementById('updown-selected').parentElement.onclick = updownSelected
 
   updateDisplay()
-  setInterval(addActions, 100)
+  setInterval(addActions, world.actionPeriod)
 }
 
 function updownSelected (elem) {
