@@ -1,6 +1,7 @@
 import { uuidv4 } from '../lib/misc.js'
 import { world } from './world.js'
 import { updateSelected } from './things.js'
+import { Knowledge } from './knowledge.js'
 
 export class Ritual {
   constructor (name) {
@@ -93,6 +94,27 @@ function job (level, elem) {
   }
 }
 
+function knowledge (level, elem) {
+  let available = Knowledge.def.filter(x => x.value <= level)
+  if (available == null || available.length <= 0) {
+    let text = document.createTextNode('There is nothing new to be know with this level of power.')
+    elem.appendChild(text)
+  } else {
+    let i = Math.floor(Math.random() * (available.length + 1))
+    if (i >= available.length) {
+      let text = document.createTextNode('You didn\'t understood what was uttered to you.')
+      elem.appendChild(text)
+    } else {
+      let k = new Knowledge(Knowledge.def[i])
+      k.learn()
+    }
+  }
+}
+
 var ritualsList = {
-  'job1': function (elem) { job(1, elem) }
+  'job1': function (elem) { job(1, elem) },
+  'knowledge1': function (elem) { knowledge(1, elem) },
+  'knowledge2': function (elem) { knowledge(2, elem) },
+  'knowledge3': function (elem) { knowledge(3, elem) },
+  'knowledge4': function (elem) { knowledge(4, elem) }
 }
