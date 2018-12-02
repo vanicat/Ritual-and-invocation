@@ -1,5 +1,6 @@
 {
     "simple": {
+        "img": "assets/invcator.png",
         "name": "A simple ritual",
         "desc": "It should not cost a lot, but don't expect gran effect",
         "cost": 10,
@@ -12,6 +13,7 @@
     },
 
     "mass": {
+        "img": "assets/invocation-circle.png",
         "name": "The black mass",
         "desc": "Submit yourself to the lord of Light",
         "cost": 20,
@@ -24,6 +26,7 @@
     },
 
     "blackgate": {
+        "img": "assets/gate.png",
         "name": "The ritual of the black gate",
         "desc": "By openning a gate to the land of nowhere, you will gain much",
         "cost": 200,
@@ -35,6 +38,7 @@
     },
 
     "redawakening": {
+        "img": "assets/eyes.png",
         "name": "The red awakening",
         "desc": "As above, so below. Answer lie within your very souls",
         "cost": 500,

@@ -16,6 +16,10 @@ export class Ritual {
 
     ritual.getElementsByClassName('desc')[0].innerHTML = this.desc
 
+    if (this.img) {
+      ritual.getElementsByTagName('img')[0].src = this.img
+    }
+
     var goals = ritual.getElementsByClassName('goals')[0]
     for (let action in this.actions) {
       let elem = document.createElement('a')
