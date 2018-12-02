@@ -62,8 +62,22 @@ export default function main () {
   document.getElementById('buyKitten').onclick =
     function () { buyAnnimal('cat') }
 
+  document.getElementById('updown-selected').parentElement.onclick = updownSelected
+
   updateDisplay()
   setInterval(addActions, 100)
+}
+
+function updownSelected (elem) {
+  var basket = document.getElementById('basket')
+  var button = document.getElementById('updown-selected')
+  if (basket.style.height === '80vh') {
+    basket.style.height = '10ex'
+    button.innerHTML = '▲'
+  } else {
+    basket.style.height = '80vh'
+    button.innerHTML = '▼'
+  }
 }
 
 var showBlockCreate = function (block) {
