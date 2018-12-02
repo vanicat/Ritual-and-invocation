@@ -6,7 +6,6 @@ import { world, updateWorld, acting } from './world.js'
 
 export var stuffBlock
 var ritualBlock
-var visibleBlock
 var dashboardBlock
 
 var goodHealth = '♥'
@@ -43,7 +42,6 @@ export default function main () {
   stuffBlock = document.getElementById('stuff')
   ritualBlock = document.getElementById('ritual')
 
-  visibleBlock = ritualBlock
   showBlockCreate(dashboardBlock)()
 
   document.getElementById('dashboardSelector').onclick =
@@ -79,11 +77,6 @@ function updownSelected (elem) {
 
 function showBlockCreate (block) {
   return function () {
-    visibleBlock.style.visibility = 'hidden'
-    visibleBlock.style.position = 'absolute'
-    block.style.visibility = 'visible'
-    block.style.position = 'inherit'
-    visibleBlock = block
   }
 }
 

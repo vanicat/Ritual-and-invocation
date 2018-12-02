@@ -47,11 +47,6 @@ section#main {
     margin-bottom: 15ex;
 }
 
-section.section {
-    visibility: hidden;
-    position: absolute;
-}
-
 .section div {
     display: inline-block;
 }
@@ -77,7 +72,7 @@ section#situation {
 #basket {
     position: fixed;
     bottom: 2ex;
-    height: 15ex;
+    height: 10ex;
     min-width: 99vw;
     background-color: black;
 }
