@@ -58,8 +58,10 @@ export default function main () {
     showBlockCreate(ritualBlock)
 
   document.getElementById('working').onclick = working
-  document.getElementById('buyKitten').onclick =
-    function () { buyAnnimal('cat') }
+
+  document.getElementById('buy-rat').onclick = function () { buyAnnimal('rat') }
+  document.getElementById('buy-cat').onclick = function () { buyAnnimal('cat') }
+  document.getElementById('buy-lamb').onclick = function () { buyAnnimal('lamb') }
 
   document.getElementById('updown-selected').parentElement.onclick = updownSelected
 

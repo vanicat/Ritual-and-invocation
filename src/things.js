@@ -73,4 +73,9 @@ export class Animal {
 
 Animal.loadDef = function (json) {
   Animal.def = json
+  for (let i in Animal.def) {
+    let elem = document.getElementById('buy-' + i)
+    let text = document.createTextNode('cost: $ ' + Animal.def[i].cost)
+    elem.appendChild(text)
+  }
 }
