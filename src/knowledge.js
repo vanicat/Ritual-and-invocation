@@ -2,7 +2,7 @@ import { Ritual } from './ritual.js'
 
 export var Knowledge = {
   learn (name) {
-    let k = Knowledge.def[name]
+    let k = Knowledge.def.filter(x => x.name === name)[0]
 
     switch (k.type) {
       case 'ritual': {
