@@ -1,6 +1,6 @@
 import { uuidv4, addText, addBr } from '../lib/misc.js'
 import { world, acting } from './world.js'
-import { updateSelected } from './things.js'
+import { updateSelected, Demon } from './things.js'
 import { Knowledge } from './knowledge.js'
 
 export class Ritual {
@@ -107,11 +107,17 @@ function knowledge (level, elem) {
     addText(elem, 'There is nothing new to be know with this level of power.')
   } else {
     let i = Math.floor(Math.random() * (available.length * (level + 1)))
-    if (i >= available.length) {
-      addText(elem, 'You didn\'t understood what was uttered to you.')
-    } else {
+    if (i < available.length) {
       addText(elem, 'You found a new ' + available[i].type)
       Knowledge.learn(available[i].name)
+    } else if (i < available.length * 2) {
+      addText(elem, 'You didn\'t understood what was uttered to you.')
+    } else {
+      let demon = new Demon()
+      demon.addingToHtml()
+      addText(elem, 'Small error can lead to dangerous consequence:')
+      addBr(elem)
+      addText(elem, demon.name + ' know you. It went to look for your souls.')
     }
   }
 }

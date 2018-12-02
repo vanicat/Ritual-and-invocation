@@ -109,6 +109,6 @@ export class Demon {
       toggleSelectStuff(demon.id)
     }
 
-    stuffBlock.appendChild(demon)
+    document.getElementById('demons').appendChild(demon)
   }
 }
