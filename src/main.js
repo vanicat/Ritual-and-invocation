@@ -1,5 +1,6 @@
 /* global fetch */
-import { Animal, Ritual } from './things.js'
+import { Animal } from './things.js'
+import { Ritual } from './ritual.js'
 
 var membersBlock
 export var stuffBlock

@@ -2,6 +2,8 @@
     "simple": {
         "name": "A simple ritual",
         "desc": "It should not cost a lot, but don't expect gran effect",
+        "cost": 10,
+        "minCost": 1,
         "actions": {
             "knowledge": "Ask for forbiden knowledge",
             "job": "Ask for a better job",
