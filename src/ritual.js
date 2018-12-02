@@ -88,6 +88,9 @@ export class Ritual {
 function job (level, elem) {
   if (world.jobQuality < 10 * level) {
     world.jobQuality += level
+  } else {
+    addBr(elem)
+    addText(elem, 'This ritual cannot help you anymore for this')
   }
 }
 
