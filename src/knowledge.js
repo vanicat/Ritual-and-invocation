@@ -2,7 +2,8 @@ import { Ritual } from './ritual.js'
 
 export var Knowledge = {
   learn (name) {
-    let k = Knowledge.def.filter(x => x.name === name)[0]
+    let i = Knowledge.def.findIndex(x => x.name === name)
+    let k = Knowledge.def[i]
 
     switch (k.type) {
       case 'ritual': {
@@ -15,6 +16,8 @@ export var Knowledge = {
         console.assert(false, 'unknow type')
         break
     }
+
+    Knowledge.def.splice(k, 1)
   },
 
   loadDef (def) {
