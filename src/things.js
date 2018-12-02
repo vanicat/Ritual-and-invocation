@@ -1,22 +1,19 @@
 /* global */
 import { stuffBlock } from './main.js'
 import { uuidv4 } from '../lib/misc.js'
-
-var stuffList = {}
+import { world } from './world.js'
 
 export function getStuffById (htmlId) {
-  return stuffList[htmlId]
+  return world.stuff[htmlId]
 }
-
-var selected = []
 
 function toggleSelectStuff (htmlId) {
   var stuff = getStuffById(htmlId)
-  var i = selected.indexOf(stuff)
+  var i = world.selected.indexOf(stuff)
   if (i === -1) {
-    selected.push(stuff)
+    world.selected.push(stuff)
   } else {
-    selected.splice(i, 1)
+    world.selected.splice(i, 1)
   }
   updateSelected()
 }
@@ -26,8 +23,8 @@ function updateSelected () {
   var div = document.getElementById('selected-stuff')
   div.innerHTML = ''
 
-  for (i in selected) {
-    stuff = selected[i]
+  for (i in world.selected) {
+    stuff = world.selected[i]
     elem = document.getElementById(stuff.htmlId)
     elem = elem.cloneNode(true)
     elem.id = elem.id + 'clone'
@@ -48,13 +45,13 @@ export class Animal {
     this.species = species
     this.htmlId = uuidv4()
     this.img = Animal.def[species].img
-    stuffList[this.htmlId] = this
+    world.stuff[this.htmlId] = this
   }
 
   remove () {
     var element = document.getElementById('htmlId')
     element.parentNode.removeChild(element)
-    delete stuffList[this.htmlId]
+    delete world.stuff[this.htmlId]
   }
 
   addingToHtml () {

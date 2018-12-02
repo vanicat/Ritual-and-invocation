@@ -1,6 +1,7 @@
 /* global fetch */
 import { Animal } from './things.js'
 import { Ritual } from './ritual.js'
+import { world } from './world.js'
 
 var membersBlock
 export var stuffBlock
@@ -8,34 +9,31 @@ var ritualBlock
 var visibleBlock
 var dashboardBlock
 
-var money = 0
-var health = 5
 var goodHealth = '♥'
 var badHealth = '♡'
-var actions = 0
 
 function updateDisplay () {
-  document.getElementById('money').innerHTML = '$ ' + money
+  document.getElementById('money').innerHTML = '$ ' + world.money
 
-  document.getElementById('health').innerHTML = goodHealth.repeat(health) + badHealth.repeat(5 - health)
-  document.getElementById('actions').innerHTML = actions
+  document.getElementById('health').innerHTML = goodHealth.repeat(world.health) + badHealth.repeat(5 - world.health)
+  document.getElementById('actions').innerHTML = world.actions
 }
 
 function addActions () {
-  actions += 1
+  world.actions += 1
   updateDisplay()
 }
 
 function working () {
-  if (actions >= 10) {
-    actions -= 10
-    money += 5
+  if (world.actions >= 10) {
+    world.actions -= 10
+    world.money += 5
   }
 }
 
 function buyAnnimal (species) {
-  if (money >= Animal.def[species].cost) {
-    money -= Animal.def[species].cost
+  if (world.money >= Animal.def[species].cost) {
+    world.money -= Animal.def[species].cost
     var animal = new Animal(species)
     animal.addingToHtml()
   }
@@ -81,7 +79,7 @@ function updownSelected (elem) {
   }
 }
 
-var showBlockCreate = function (block) {
+function showBlockCreate (block) {
   return function () {
     visibleBlock.style.visibility = 'hidden'
     visibleBlock.style.position = 'absolute'

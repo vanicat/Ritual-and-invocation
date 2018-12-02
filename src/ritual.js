@@ -33,3 +33,13 @@ export class Ritual {
     document.getElementById('ritual').appendChild(ritual)
   }
 }
+
+var job = {
+  'desc': 'Ask for a better job',
+  doIt: function (world) {
+    if (world.job < 10) {
+      world.job += 1
+    }
+  }
+
+}
