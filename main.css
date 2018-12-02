@@ -51,7 +51,7 @@ section.section {
     position: absolute;
 }
 
-section.section div, #basket div div {
+.section div {
     display: inline-block;
 }
 
@@ -65,13 +65,12 @@ section#situation {
     border-style: solid;
     border-width: 1px;
     min-height: 3cm;
-    width: fit-content;
+    width: 20vw;
     display: inline-block;
 }
 
 .things img {
     width: 3cm;
-    float: left;
 }
 
 #basket {
