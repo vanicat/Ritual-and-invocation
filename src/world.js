@@ -39,4 +39,8 @@ export function updateWorld () {
     }
   }
   updateDisplay()
+
+  if (world.health <= 0) {
+    window.location = 'dead.html'
+  }
 }
