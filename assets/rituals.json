@@ -6,8 +6,38 @@
         "minCost": 1,
         "actions": {
             "knowledge": "Ask for forbiden knowledge",
-            "job": "Ask for a better job",
-            "friend": "Ask for contact with possible aquaintance"
+            "job": "Ask for a better job"
+        }
+    },
+
+    "mass": {
+        "name": "The black mass",
+        "desc": "Submit yourself to the lord of Light",
+        "cost": 20,
+        "minCost": 3,
+        "actions": {
+            "job2": "Better, and better job",
+            "knowledge2": "Black, evil knowledge"
+        }
+    },
+
+    "blackgate": {
+        "name": "The ritual of the black gate",
+        "desc": "By openning a gate to the land of nowhere, you will gain much",
+        "cost": 200,
+        "minCost": 20,
+        "actions": {
+            "knowledge3": "Learn what should be unknown"
+        }
+    },
+
+    "redawakening": {
+        "name": "The red awakening",
+        "decs": "As above, so below. Answer lie within your very souls",
+        "cost": 500,
+        "minCost": 499,
+        "actions": {
+            "forever": "Win againt Death in the gran fight of life"
         }
     }
 }
