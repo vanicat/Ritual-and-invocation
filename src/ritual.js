@@ -1,4 +1,4 @@
-import { uuidv4 } from '../lib/misc.js'
+import { uuidv4, addText, addBr } from '../lib/misc.js'
 import { world } from './world.js'
 import { updateSelected } from './things.js'
 import { Knowledge } from './knowledge.js'
@@ -26,8 +26,7 @@ export class Ritual {
       }
       goals.appendChild(elem)
 
-      elem = document.createElement('br')
-      goals.appendChild(elem)
+      addBr(goals)
     }
 
     document.getElementById('ritual-list').appendChild(ritual)
@@ -47,19 +46,16 @@ export class Ritual {
 
     for (let stuff in world.selected) {
       const lamb = world.selected[stuff]
-      elem.appendChild(document.createElement('br'))
+      addBr(elem)
       if (lamb.value >= this.minCost) {
         if (sacrifice > this.cost * 1.5) {
-          let text = document.createTextNode('The unknowable force are full with power')
-          elem.appendChild(text)
-          elem.appendChild(document.createElement('br'))
+          addText(elem, 'The unknowable force are full with power')
+          addBr(elem)
         }
         sacrifice += world.selected[stuff].value
-        let text = document.createTextNode('The essence of ' + lamb.name + ' has been consumed')
-        elem.appendChild(text)
+        addText(elem, 'The essence of ' + lamb.name + ' has been consumed')
       } else {
-        let text = document.createTextNode('The essence of ' + lamb.name + ' has been refused, it has no value')
-        elem.appendChild(text)
+        addText(elem, 'The essence of ' + lamb.name + ' has been refused, it has no value')
       }
       lamb.remove()
     }
@@ -67,21 +63,18 @@ export class Ritual {
     world.selected = []
     updateSelected()
 
-    elem.appendChild(document.createElement('br'))
+    addBr(elem)
 
     if (sacrifice >= this.cost) {
-      let text = document.createTextNode('The price has been paid. The deed is done.')
-      elem.appendChild(text)
+      addText(elem, 'The price has been paid. The deed is done.')
 
       ritual(elem)
     } else {
       if (world['first-error']) {
-        let text = document.createTextNode('The price has not been matched. Next time you will suffer the consequences.')
-        elem.appendChild(text)
+        addText(elem, 'The price has not been matched. Next time you will suffer the consequences.')
         world['first-error'] = false
       } else {
-        let text = document.createTextNode('The price has not been matched. Let your body pay what is missing.')
-        elem.appendChild(text)
+        addText(elem, 'The price has not been matched. Let your body pay what is missing.')
         world.health -= 1 // TODO: dying
       }
     }
@@ -96,14 +89,15 @@ function job (level, elem) {
 
 function knowledge (level, elem) {
   let available = Knowledge.def.filter(x => x.value <= level)
+
+  addBr(elem)
+
   if (available == null || available.length <= 0) {
-    let text = document.createTextNode('There is nothing new to be know with this level of power.')
-    elem.appendChild(text)
+    addText(elem, 'There is nothing new to be know with this level of power.')
   } else {
     let i = Math.floor(Math.random() * (available.length + 1))
     if (i >= available.length) {
-      let text = document.createTextNode('You didn\'t understood what was uttered to you.')
-      elem.appendChild(text)
+      addText(elem, 'You didn\'t understood what was uttered to you.')
     } else {
       let k = new Knowledge(Knowledge.def[i])
       k.learn()

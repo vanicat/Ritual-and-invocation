@@ -1,6 +1,6 @@
 /* global */
 import { stuffBlock } from './main.js'
-import { uuidv4 } from '../lib/misc.js'
+import { uuidv4, addText } from '../lib/misc.js'
 import { world } from './world.js'
 
 export function getStuffById (htmlId) {
@@ -74,7 +74,6 @@ Animal.loadDef = function (json) {
   Animal.def = json
   for (let i in Animal.def) {
     let elem = document.getElementById('buy-' + i)
-    let text = document.createTextNode('cost: $ ' + Animal.def[i].cost)
-    elem.appendChild(text)
+    addText(elem, 'cost: $ ' + Animal.def[i].cost)
   }
 }
