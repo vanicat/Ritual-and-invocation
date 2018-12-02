@@ -1,9 +1,31 @@
 {
+    "rat": {
+        "img": "assets/rat.png",
+        "cost": 5,
+        "value": 1,
+        "maintenance": 1,
+        "names": [
+            "Remy", "Templeton", "Rizzo", "Nicodemus", "Nigel", "Professor Ratigan",
+            "Scabbers", "Ben", "Cluny the Scourge", "Ratty", "Ratbert", "Jenner", "Django", "Splinter",
+            "Squeakers", "Squeak", "Ratatat", "Ratticus Finch", "Scamper", "Scritch", "Wormtail", "Ratso",
+            "Rats Domino"
+        ]
+    },
+    "lamb": {
+        "img": "assets/lamb.png",
+        "cost": 500,
+        "value": 250,
+        "maintenance": 20,
+        "names": [
+            "Billy", "Nan", "Lambert", "Wooly", "Bo Peep", "Baaa-rbra Anne", "Baaarnabas", "Baaartholemew",
+            "Baaartok", "Baaachus", "Baaalthazar", "Baaarack"
+        ]
+    },
     "cat": {
         "img": "assets/kitten.png",
         "cost": 20,
         "value": 5,
-        "maintance": 10,
+        "maintenance": 10,
         "names": ["Nelsonlotus", "Walkergrin", "Hompa",
             "Feroddy",
             "Bigwalker",
