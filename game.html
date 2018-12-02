@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My sect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <script type="module" src="src/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My secte</h1>
+    </header>
+    <nav>
+        <ul>
+            <li id="dashboardSelector" class="clickable">Dashboard</li>
+            <li id="membersSelector" class="clickable">members</li>
+            <li id="stuffSelector" class="clickable">artifact</li>
+            <li id="ritualSelector" class="clickable">ritual</li>
+        </ul>
+    </nav>
+    <section id="situation">
+        <ul>
+            <li>money: <span id="money">$0</span></li>
+            <li>health: <span id="health">♥♥♥♥♥</span></li>
+            <li>action: <span id="doing">0</span></li>
+            <meter id="waiting" value="2" min="0" max="10">x</meter>
+        </ul>
+    </section>
+    <section id="main">
+        <section id="dashboard" class="section">
+            <h2>Dashboard</h2>
+            <div class="clickable" id='working'>
+                working <br>
+                Gaining money from actions.<br>
+                <span>  </span>
+            </div>
+            <div class="clickable" id="buy-rat">Buy  a rat <br>It's cheap <br></div>
+            <div class="clickable" id="buy-cat">Buy  a cat <br>It will purr <br></div>
+            <div class="clickable" id="buy-lamb">Buy a sheep <br>The proverbial sacrifial lamb <br></div>
+            <div class="clickable" id="buy-cow">Buy a cow <br>It's big, realy big <br></div>
+
+            <section id="demons" class="deamon-list" hidden>
+                <h3>You woke something</h3>
+
+            </section>
+        </section>
+        <section id="members" class="section">
+          <h2>Our dearest members</h2>
+        </section>
+        <section id="action" class="section">
+    
+        </section>
+        <section id="stuff" class="section">
+            <h2>Things we own</h2>
+        </section>
+        <section id="ritual" class="section">
+            <h2>Known ritual</h2>
+            <div id="ritual-list"></div>
+            <section id="ritual-result-list"></section>
+        </section>
+    </section>
+    <section id="basket">
+        <h2><span id="updown-selected" class="clickable">▲</span> Selected</h2>
+        <div id="selected-stuff"></div>
+    </section>
+    <footer></footer>
+
+    <div hidden>
+        <div id="animal" class="animals things clickable">
+            <img src="assets/filler.png"><br>
+            Name: <span class="name"></span><br>
+            Species: <span class="species"></span>
+        </div>
+        <div id="ritual_skel" class="rituals things">
+            <span class="name"></span><br>
+            <img src="assets/filler.png" alt="?"><br>
+            <span class="desc"></span><br>
+            <span class="cost"></span><br>
+            <label for="goal">goal</label><br>
+            <div class="goals"></div>
+        </div>
+        <div id="ritual-result" class="result clickable">
+            We sang to the stars, forbidden words has been uttered, blood has been spilled.
+        </div>
+        <div id="demon" class="things clickable">
+            <span class="name"></span><br>
+            It want to devour your soul, better do something about it.
+
+            <meter value="0" min="0" max="400">x</meter>
+        </div>
+    </div>
+</body>
+</html>
