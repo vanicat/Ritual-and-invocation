@@ -113,6 +113,8 @@ function knowledge (level, elem) {
 
 var ritualsList = {
   'job1': function (elem) { job(1, elem) },
+  'job2': function (elem) { job(2, elem) },
+  'job3': function (elem) { job(3, elem) },
   'knowledge1': function (elem) { knowledge(1, elem) },
   'knowledge2': function (elem) { knowledge(2, elem) },
   'knowledge3': function (elem) { knowledge(3, elem) },
