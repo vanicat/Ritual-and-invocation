@@ -5,8 +5,8 @@
         "cost": 10,
         "minCost": 1,
         "actions": {
-            "knowledge": "Ask for forbiden knowledge",
-            "job": "Ask for a better job"
+            "knowledge1": "Ask for forbiden knowledge",
+            "job1": "Ask for a better job"
         }
     },
 

@@ -72,7 +72,7 @@ export class Ritual {
       let text = document.createTextNode('The price has been paid. The deed is done.')
       elem.appendChild(text)
 
-      ritual.doIt()
+      ritual(elem)
     } else {
       if (world['first-error']) {
         let text = document.createTextNode('The price has not been matched. Next time you will suffer the consequences.')
@@ -87,16 +87,12 @@ export class Ritual {
   }
 }
 
-var job = {
-  'desc': 'Ask for a better job',
-  doIt: function () {
-    if (world.jobQuality < 10) {
-      world.jobQuality += 1
-    }
+function job (level, elem) {
+  if (world.jobQuality < 10 * level) {
+    world.jobQuality += level
   }
-
 }
 
 var ritualsList = {
-  'job': job
+  'job1': function (elem) { job(1, elem) }
 }
