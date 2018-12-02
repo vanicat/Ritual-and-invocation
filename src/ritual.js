@@ -82,7 +82,7 @@ export class Ritual {
           world['first-error'] = false
         } else {
           addText(elem, 'The price has not been matched. Let your body pay what is missing.')
-          world.health -= 1 // TODO: dying
+          world.health -= 1
         }
       }
     })
