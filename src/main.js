@@ -1,5 +1,5 @@
 /* global fetch */
-import { Animal } from './things.js'
+import { Animal, Demon } from './things.js'
 import { Ritual } from './ritual.js'
 import { Knowledge } from './knowledge.js'
 import { world, updateWorld, acting } from './world.js'
@@ -106,5 +106,9 @@ fetch('assets/rituals.json')
 fetch('assets/knowledge.json')
   .then(res => res.json())
   .then(json => Knowledge.loadDef(json))
+
+fetch('assets/demon.json')
+  .then(res => res.json())
+  .then(json => Demon.loadDef(json))
 
 document.getElementsByTagName('body')[0].onload = main

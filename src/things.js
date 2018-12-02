@@ -77,3 +77,38 @@ Animal.loadDef = function (json) {
     addText(elem, 'cost: $ ' + Animal.def[i].cost)
   }
 }
+
+export class Demon {
+  constructor (level) {
+    const nd = Math.floor(Math.random() * Demon.def.length)
+    const name = Demon.def[nd]
+    this.name = name
+    this.level = level
+    this.htmlId = uuidv4()
+
+    world.stuff[this.htmlId] = this
+  }
+
+  static loadDef (json) {
+    Demon.def = json
+  }
+
+  remove () {
+    var element = document.getElementById(this.htmlId)
+    element.parentNode.removeChild(element)
+    delete world.stuff[this.htmlId]
+  }
+
+  addingToHtml () {
+    var demon = document.getElementById('demon').cloneNode(true)
+    demon.id = this.htmlId
+    // demon.getElementsByTagName('img')[0].src = this.img
+    demon.getElementsByClassName('name')[0].innerHTML = this.name
+
+    demon.onclick = function () {
+      toggleSelectStuff(demon.id)
+    }
+
+    stuffBlock.appendChild(demon)
+  }
+}
