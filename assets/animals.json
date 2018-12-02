@@ -11,10 +11,20 @@
             "Rats Domino"
         ]
     },
-    "lamb": {
-        "img": "assets/sheep.png",
+    "cow": {
+        "img": "assets/cow.png",
         "cost": 500,
         "value": 250,
+        "maintenance": 20,
+        "names": [
+            "Angus", "Hereford", "Bully", "Duke", "Hydro", "Homer", "Earl", "Rose",
+            "Darla", "Margie", "Shelly", "Daisy"
+        ]
+    },
+    "lamb": {
+        "img": "assets/sheep.png",
+        "cost": 250,
+        "value": 100,
         "maintenance": 20,
         "names": [
             "Billy", "Nan", "Lambert", "Wooly", "Bo Peep", "Baaa-rbra Anne", "Baaarnabas", "Baaartholemew",
