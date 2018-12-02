@@ -1,6 +1,7 @@
 /* global fetch */
 import { Animal } from './things.js'
 import { Ritual } from './ritual.js'
+import { Knowledge } from './knowledge.js'
 import { world } from './world.js'
 
 var membersBlock
@@ -101,6 +102,10 @@ fetch('assets/rituals.json')
     Ritual.def = json
     var r = new Ritual('simple')
     r.addingToHtml()
-  }
-  )
+  })
+
+fetch('assets/knowledge.json')
+  .then(res => res.json())
+  .then(json => Knowledge.loadDef(json))
+
 document.getElementsByTagName('body')[0].onload = main

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "mass",
+        "type": "ritual",
+        "value": 1
+    },
+    {
+        "name": "blackgate",
+        "type": "ritual",
+        "value": 2
+    },
+    {
+        "name": "redawakening",
+        "type": "ritual",
+        "value": 3
+    }
+]
