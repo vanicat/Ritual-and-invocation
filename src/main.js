@@ -4,7 +4,6 @@ import { Ritual } from './ritual.js'
 import { Knowledge } from './knowledge.js'
 import { world, updateWorld, acting } from './world.js'
 
-var membersBlock
 export var stuffBlock
 var ritualBlock
 var visibleBlock
@@ -41,17 +40,14 @@ function buyAnnimal (species) {
 
 export default function main () {
   dashboardBlock = document.getElementById('dashboard')
-  membersBlock = document.getElementById('members')
   stuffBlock = document.getElementById('stuff')
   ritualBlock = document.getElementById('ritual')
 
-  visibleBlock = membersBlock
+  visibleBlock = ritualBlock
   showBlockCreate(dashboardBlock)()
 
   document.getElementById('dashboardSelector').onclick =
     showBlockCreate(dashboardBlock)
-  document.getElementById('membersSelector').onclick =
-    showBlockCreate(membersBlock)
   document.getElementById('stuffSelector').onclick =
     showBlockCreate(stuffBlock)
   document.getElementById('ritualSelector').onclick =
