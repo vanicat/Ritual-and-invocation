@@ -2,6 +2,7 @@
     "cat": {
         "img": "assets/kitten.png",
         "cost": 20,
+        "value": 5,
         "maintance": 10,
         "names": ["Nelsonlotus", "Walkergrin", "Hompa",
             "Feroddy",
