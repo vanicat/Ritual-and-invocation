@@ -95,12 +95,12 @@ function knowledge (level, elem) {
   if (available == null || available.length <= 0) {
     addText(elem, 'There is nothing new to be know with this level of power.')
   } else {
-    let i = Math.floor(Math.random() * (available.length + 1))
+    let i = Math.floor(Math.random() * (available.length * (level + 1)))
     if (i >= available.length) {
       addText(elem, 'You didn\'t understood what was uttered to you.')
     } else {
-      let k = new Knowledge(Knowledge.def[i])
-      k.learn()
+      addText(elem, 'You found a new ' + available[i].type)
+      Knowledge.learn(available[i].name)
     }
   }
 }

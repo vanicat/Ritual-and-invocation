@@ -1,14 +1,12 @@
 import { Ritual } from './ritual.js'
 
-export class Knowledge {
-  constructor (name) {
-    Object.assign(this, Knowledge.def['name'])
-  }
+export var Knowledge = {
+  learn (name) {
+    let k = Knowledge.def[name]
 
-  learn () {
-    switch (this.type) {
+    switch (k.type) {
       case 'ritual': {
-        let r = new Ritual(this.name)
+        let r = new Ritual(name)
         r.addingToHtml()
         break
       }
@@ -17,9 +15,9 @@ export class Knowledge {
         console.assert(false, 'unknow type')
         break
     }
-  }
+  },
 
-  static loadDef (def) {
+  loadDef (def) {
     Knowledge.def = def
   }
 }
