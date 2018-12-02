@@ -116,6 +116,10 @@ function knowledge (level, elem) {
   }
 }
 
+function forever (elem) {
+  window.location = 'winning.html'
+}
+
 var ritualsList = {
   'job1': function (elem) { job(1, elem) },
   'job2': function (elem) { job(2, elem) },
@@ -123,5 +127,6 @@ var ritualsList = {
   'knowledge1': function (elem) { knowledge(1, elem) },
   'knowledge2': function (elem) { knowledge(2, elem) },
   'knowledge3': function (elem) { knowledge(3, elem) },
-  'knowledge4': function (elem) { knowledge(4, elem) }
+  'knowledge4': function (elem) { knowledge(4, elem) },
+  'forever': forever
 }

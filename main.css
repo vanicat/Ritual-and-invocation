@@ -81,3 +81,7 @@ section#situation {
     min-width: 99vw;
     background-color: black;
 }
+
+.victory {
+    font-size: 300%;
+}

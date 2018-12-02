@@ -42,7 +42,7 @@
         "name": "The red awakening",
         "desc": "As above, so below. Answer lie within your very souls",
         "cost": 500,
-        "minCost": 499,
+        "minCost": 249,
         "actions": {
             "forever": "Eternal Life"
         },
