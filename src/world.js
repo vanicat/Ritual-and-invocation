@@ -15,7 +15,7 @@ export var world = {
   'first-error': true
 }
 
-export function acting (name, done, goal) {
+export function acting (name, goal, done) {
   world.doing = name
   world.goal = goal
   world.actions = 0

@@ -1,5 +1,5 @@
 import { uuidv4, addText, addBr } from '../lib/misc.js'
-import { world } from './world.js'
+import { world, acting } from './world.js'
 import { updateSelected } from './things.js'
 import { Knowledge } from './knowledge.js'
 
@@ -65,19 +65,23 @@ export class Ritual {
 
     addBr(elem)
 
-    if (sacrifice >= this.cost) {
-      addText(elem, 'The price has been paid. The deed is done.')
+    var me = this
 
-      ritual(elem)
-    } else {
-      if (world['first-error']) {
-        addText(elem, 'The price has not been matched. Next time you will suffer the consequences.')
-        world['first-error'] = false
+    acting('casing ritual', this.level * 5, function () {
+      if (sacrifice >= me.cost) {
+        addText(elem, 'The price has been paid. The deed is done.')
+
+        ritual(elem)
       } else {
-        addText(elem, 'The price has not been matched. Let your body pay what is missing.')
-        world.health -= 1 // TODO: dying
+        if (world['first-error']) {
+          addText(elem, 'The price has not been matched. Next time you will suffer the consequences.')
+          world['first-error'] = false
+        } else {
+          addText(elem, 'The price has not been matched. Let your body pay what is missing.')
+          world.health -= 1 // TODO: dying
+        }
       }
-    }
+    })
   }
 }
 

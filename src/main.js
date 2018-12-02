@@ -17,21 +17,25 @@ export function updateDisplay () {
   document.getElementById('money').innerHTML = '$ ' + world.money
 
   document.getElementById('health').innerHTML = goodHealth.repeat(world.health) + badHealth.repeat(5 - world.health)
+
   document.getElementById('doing').innerHTML = world.doing
+
   document.getElementById('waiting').innerHTML = '' + world.actions + ' of ' + world.goal
   document.getElementById('waiting').value = world.actions
   document.getElementById('waiting').max = world.goal
 }
 
 function working () {
-  acting('working', function () { world.money += world.jobQuality }, 10)
+  acting('working', 10, function () { world.money += world.jobQuality })
 }
 
 function buyAnnimal (species) {
   if (world.money >= Animal.def[species].cost) {
     world.money -= Animal.def[species].cost
-    var animal = new Animal(species)
-    animal.addingToHtml()
+    acting('buying', 5, function () {
+      var animal = new Animal(species)
+      animal.addingToHtml()
+    })
   }
 }
 
