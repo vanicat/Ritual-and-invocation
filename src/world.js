@@ -6,5 +6,6 @@ export var world = {
   'jobQuality': 5,
   'selected': [],
   'stuff': {},
-  'ritual': []
+  'ritual': [],
+  'first-error': true
 }
