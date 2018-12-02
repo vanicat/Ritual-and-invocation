@@ -2,7 +2,7 @@
 import { Animal } from './things.js'
 import { Ritual } from './ritual.js'
 import { Knowledge } from './knowledge.js'
-import { world } from './world.js'
+import { world, updateWorld, acting } from './world.js'
 
 var membersBlock
 export var stuffBlock
@@ -13,23 +13,18 @@ var dashboardBlock
 var goodHealth = '♥'
 var badHealth = '♡'
 
-function updateDisplay () {
+export function updateDisplay () {
   document.getElementById('money').innerHTML = '$ ' + world.money
 
   document.getElementById('health').innerHTML = goodHealth.repeat(world.health) + badHealth.repeat(5 - world.health)
-  document.getElementById('actions').innerHTML = world.actions
-}
-
-function addActions () {
-  world.actions += 1
-  updateDisplay()
+  document.getElementById('doing').innerHTML = world.doing
+  document.getElementById('waiting').innerHTML = '' + world.actions + ' of ' + world.goal
+  document.getElementById('waiting').value = world.actions
+  document.getElementById('waiting').max = world.goal
 }
 
 function working () {
-  if (world.actions >= 10) {
-    world.actions -= 10
-    world.money += world.jobQuality
-  }
+  acting('working', function () { world.money += world.jobQuality }, 10)
 }
 
 function buyAnnimal (species) {
@@ -67,7 +62,7 @@ export default function main () {
   document.getElementById('updown-selected').parentElement.onclick = updownSelected
 
   updateDisplay()
-  setInterval(addActions, world.actionPeriod)
+  setInterval(updateWorld, world.actionPeriod)
 }
 
 function updownSelected (elem) {
